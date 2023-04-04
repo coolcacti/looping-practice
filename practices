@@ -1,0 +1,86 @@
+#Keep Guessing
+import random
+number = random.randint(1, 10)
+print("I have chosen a number between 1 and 10. Try to guess it.")
+guess = int(input("Your guess: "))
+
+while guess != number:
+    print("That is incorrect. Guess again!")
+    guess = int(input("Your guess: "))
+
+print("That's right! You're a good guesser!")
+
+#Dice Doubles
+import random
+dice1 = random.randint(1,6)
+dice2 = random.randint(1,6)
+
+while dice1 != dice2:
+  print(f"Roll #1: {dice1}\nRoll #2: {dice2}\nThe total is {dice1 + dice2}!")
+  dice1 = random.randint(1,6)
+  dice2 = random.randint(1,6)
+
+print(f"Roll #1: {dice1}\nRoll #2: {dice2}\nThe total is {dice1 + dice2}!")
+
+#Pin Lockout
+PIN = "12345"
+tries = 0
+
+print("WELCOME TO THE BANK OF GALLO.")
+entry = input("ENTER YOUR PIN: ")
+tries += 1
+
+while entry != PIN and tries < 4:
+    print("\nINCORRECT PIN. TRY AGAIN.")
+    entry = input("ENTER YOUR PIN: ")
+    tries += 1
+
+if entry == PIN:
+    print("\nPIN ACCEPTED. YOU NOW HAVE ACCESS TO YOUR ACCOUNT.")
+elif tries >= 4:
+    print("\nYOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.")
+
+#Number Guessing with Counter
+import random
+number = random.randint(1, 10)
+guesscount = 0
+guess = int(input("I have chosen a number between 1 and 10.  Try to guess it."))
+guesscount += 1
+while guess != number:
+  guesscount += 1
+  print(f"That is incorrect.  Guess again.\nYour guess: {guess}")
+  guess = int(input("I have chosen a number between 1 and 10.  Try to guess it."))
+
+print(f"That's right!  You're a good guesser. It only took you {guesscount} tries.")
+
+#Hi-Lo with Limited Tries
+import random
+number = random.randint(1, 100)
+guess = int(input("Guess a number between 1-100: "))
+guesscount = 1
+print(number)
+
+while guesscount < 7 and guess != number:
+  guesscount += 1
+  print("That's incorrect!")
+  if guess > guesscount:
+    print("Your guess is too high")
+  else:
+    print("Your guess is too low")
+  guess = int(input("Guess a number between 1-100: "))
+
+if guesscount == 7:
+  print("You ran out of guesses")
+else:
+  print("You got the number!")
+  
+#Adding values in a loop
+number = int(input("Please give me a number:"))
+total = 0
+while number != 0:
+  total += number
+  print(f"Number: {number}")
+  print(f"Your current total is: {total}")
+  number = int(input("Please give me a number:"))
+
+print(f"The total is {total}")
